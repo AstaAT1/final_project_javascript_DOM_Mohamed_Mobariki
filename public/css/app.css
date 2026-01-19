@@ -18,7 +18,9 @@ nav {
     width: 100%;
     height: 14vh;
     background-color: rgb(255, 255, 255);
-    /* position: fixed; */
+    position: fixed;
+    z-index: 999;
+
 }
 
 .menu-nav {
@@ -77,7 +79,8 @@ nav {
     justify-content: space-around;
     width: 100%;
     background-color: #f2f2f2;
-    height: 90vh;
+    height: 100vh;
+    padding-top: 140px;
 }
 
 .left-s1 {
@@ -185,6 +188,7 @@ nav {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .bottom-s2 {
@@ -371,43 +375,171 @@ nav {
 /* <!-- .................... -->
         <!-- Section4 -->
         <!-- ....................  --> */
-        .section4{
-           padding-top: 50px;
-           padding-bottom: 50px;
-           background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/stats-bg.jpg);
-             background-repeat: no-repeat;
+.section4 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/stats-bg.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
     height: 50vh;
-        }
-        .details-s4{
-            display: flex;
-            justify-content: space-around;
-            align-items: center !important;
-            text-align: center;
-        }
-        .details{
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            top: 100px;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .s4-1{
-            font-size:55px;
-            font-weight: bold;
-        }
-        .s4-2{
-         font-weight: 600;
-            font-size: 17px;
-            color: #c4c4c4;
-        }
-            /* <!-- .................... -->
+}
+
+.details-s4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center !important;
+    text-align: center;
+}
+
+.details {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.s4-1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.s4-2 {
+    font-weight: 600;
+    font-size: 17px;
+    color: #c4c4c4;
+}
+
+/* <!-- .................... -->
         <!-- Section5 -->
         <!-- ....................  --> */
-.section5{
-    padding-top:50px ;
+.section5 {
+    padding-top: 50px;
+}
+
+.choix a {
+    text-decoration: none;
+    color: #28282c;
+    font-size: 18px;
+}
+
+.choix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    gap: 30px;
+}
+
+.p1-s5 {
+    color: #66696c;
+}
+
+.p2-s5 {
+    color: #ce1212;
+    font-size: 55px;
+    font-weight: bolder;
+}
+
+.plat img {
+    width: 300px;
+}
+
+.plat-menu {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.plat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.plat h3 {
+    font-size: 24px;
+}
+
+.p3-s5 {
+    font-size: 17px;
+    color: #909294;
+}
+
+.p4-s5 {
+    color: #ce1212;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* <!-- .................... -->
+        <!-- Section6 -->
+        <!-- ....................  --> */
+.section6 {
+    background-color: #f2f2f2;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.bottom-s6 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.right-s6 img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.left-s6 {
+    width: 39% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-left: solid #ce1212;
+    padding-left: 20px;
+    height: 160px;
+}
+.p0-s6{
+   
+
+    font-size: 17px;
+     font-style: italic;
+}
+.leq{
+    color: #ce1212d2;
+    font-size: 20px;
+    /* padding-left: 20px; */
+    padding-right: 35px;
+ 
+}
+.riq{
+    color: #ce1212d2;
+    font-size: 20px;
+    padding-left: 20px;
+    /* padding-right: 35px; */
+}
+.starts{
+    color: rgba(225, 191, 0, 0.879);
+    display: flex;
+}
+.form h4{
+font-size: 19px;
+}
+.form p{
+    font-size: 15px;
+    color: #a9a8a8;
 }
