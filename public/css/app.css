@@ -387,6 +387,27 @@ nav {
             text-align: center;
         }
         .details{
-            
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 100px;
+            flex-direction: column;
+            gap: 10px;
         }
-        .s
+        .s4-1{
+            font-size:55px;
+            font-weight: bold;
+        }
+        .s4-2{
+         font-weight: 600;
+            font-size: 17px;
+            color: #c4c4c4;
+        }
+            /* <!-- .................... -->
+        <!-- Section5 -->
+        <!-- ....................  --> */
+.section5{
+    padding-top:50px ;
+}
