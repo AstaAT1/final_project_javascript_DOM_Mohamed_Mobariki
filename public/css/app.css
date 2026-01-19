@@ -1,27 +1,57 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-nav{
+
+/* <!-- .................... -->
+        <!-- Navbar -->
+         <!-- .................... --> */
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 14vh;
-    background-color: antiquewhite;
-    position: fixed;
+    background-color: rgb(255, 255, 255);
+    /* position: fixed; */
 }
-.menu-nav{
+
+.menu-nav {
     display: flex;
     gap: 35px;
     font-size: 16px;
     font-weight: 500;
+
 }
-.point-red{
+
+.menu-nav a {
+    text-decoration: none;
+    position: relative;
+    color: grey;
+    padding-bottom: 10px;
+}
+
+.menu-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+.menu-nav a:hover::after {
+    width: 100%;
+}
+
+.point-red {
     color: red;
 }
-.book{
+
+.book {
     background-color: red;
     width: 130px;
     height: 36px;
@@ -32,4 +62,94 @@ nav{
     justify-content: center;
     align-items: center;
     border-radius: 50px;
+}
+
+/* <!-- .................... -->
+        <!-- Section1 -->
+         <!-- .................... --> */
+.section1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #f2f2f2;
+    height: 90vh;
+}
+
+.left-s1 {
+    /* background-color: aquamarine !important; */
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.p1-s1 {
+    width: 400px;
+    font-size: 60px;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 600;
+   color: rgb(96, 96, 96);
+}
+
+.p2-s1 {
+    font-size: 23px;
+}
+
+.p3-s1 {
+    background-color: red;
+    width: 150px;
+    height: 42px;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.p4-s1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.p4-s1 svg {
+    width: 29px;
+    color: red;
+    height: 29px;
+}
+
+.center-s1 {
+    display: flex;
+    gap: 20px;
+}
+
+.right-s1 {
+    /* background-color: aqua; */
+
+}
+
+.right-s1 img {
+    width: 535px;
+    animation: upside-down 4s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes upside-down {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
