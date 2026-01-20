@@ -490,6 +490,7 @@ nav {
     padding-top: 50px;
     display: flex;
     flex-direction: column;
+    /* justify-content: center !important; */
     gap: 70px;
 }
 
@@ -513,33 +514,121 @@ nav {
     padding-left: 20px;
     height: 160px;
 }
-.p0-s6{
-   
+
+.p0-s6 {
+
 
     font-size: 17px;
-     font-style: italic;
+    font-style: italic;
 }
-.leq{
+
+.leq {
     color: #ce1212d2;
     font-size: 20px;
     /* padding-left: 20px; */
     padding-right: 35px;
- 
+
 }
-.riq{
+
+.riq {
     color: #ce1212d2;
     font-size: 20px;
     padding-left: 20px;
     /* padding-right: 35px; */
 }
-.starts{
+
+.starts {
     color: rgba(225, 191, 0, 0.879);
     display: flex;
 }
-.form h4{
-font-size: 19px;
+
+.form h4 {
+    font-size: 19px;
 }
-.form p{
+
+.form p {
     font-size: 15px;
     color: #a9a8a8;
+}
+
+.button-cirlce div {
+    width: 13px;
+    height: 13px;
+    background-color: #ababab;
+    cursor: pointer;
+    border-radius: 50%;
+    /* border: none; */
+    display: flex;
+    /* transition: 0.3s;    */
+}
+
+.b-s6.active {
+    background-color: #ce1212;
+
+}
+
+.button-cirlce {
+    /* background-color: #ce1212; */
+    /* width: 100px;
+    height: 50px; */
+    display: flex;
+    /* color: #ce1212 !important; */
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: -60px;
+}
+
+/*  */
+FOR CAROUSEL .carousel-all {
+    position: relative;
+}
+
+.carousel {
+    position: absolute;
+    opacity: 0;
+}
+
+.carousel.active {
+    opacity: 1;
+    position: relative;
+}
+
+/*  */
+/* <!-- .................... -->
+        <!-- Section7 -->
+        <!-- ....................  --> */
+.section7 {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.memory1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/events-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 100vh;
+    width: 33.3%;
+}
+
+.memory2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/events-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 100vh;
+    width: 33.3%;
+}
+
+.memory3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/events-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 100vh;
+    width: 33.3%;
 }
