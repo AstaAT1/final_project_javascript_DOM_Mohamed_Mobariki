@@ -1,46 +1,51 @@
 document.querySelectorAll(".carousel-all").forEach(parent => {
-    const type = Array.from(parent.querySelectorAll(".carousel, .carousel1"));
+    const type = Array.from(parent.querySelectorAll(".carousel, .carousel1, .carousel2"));
     const captions = Array.from(parent.querySelectorAll(".b-s6"));
 
-    const isGroup = parent.querySelector(".memorys") !== null;
-    const group = isGroup ? 3 : 1;
+    const wrapper = parent.querySelector(".memorys, .gallery");
+    const isSection7 = parent.querySelector(".memorys") !== null;
+    const isSection10 = parent.querySelector(".gallery") !== null;
     let counter = 0;
 
-    const wrapper = parent.querySelector(".memorys");
-
-    function getVisibleSlides() {
-        // circular logic
-        let slides = [];
-        for (let i = 0; i < group; i++) {
-            slides.push(type[(counter + i) % type.length]);
+    // Function for Section10 - 5 slides visible
+    function UpdateCarousel2() {
+        const totalSlides = type.length;
+        wrapper.innerHTML = '';
+        
+        // Add 5 slides
+        for (let i = 0; i < 5; i++) {
+            const slideIndex = (counter + i) % totalSlides;
+            const clone = type[slideIndex].cloneNode(true);
+            wrapper.appendChild(clone);
         }
-        return slides;
-    }
 
-    function Update() {
-        if (!isGroup) return;
+        wrapper.style.transform = 'translateX(0)';
 
-        const slideWidth = type[0].offsetWidth;
-
-        // reset transform
-        wrapper.style.transform = `translateX(0px)`;
-
-        // hide all slides temporarily
-        type.forEach(s => s.style.display = "none");
-
-        // show only the circular 3 slides
-        const visible = getVisibleSlides();
-        visible.forEach((slide, i) => {
-            slide.style.display = "block";
-            slide.style.transform = `translateX(${i * slideWidth}px)`;
-        });
-
-        // update captions
+        // Update captions
         captions.forEach(c => c.classList.remove("active"));
         if (captions[counter]) captions[counter].classList.add("active");
     }
 
-    function Change() {
+    // Function for Section7 - 3 slides visible
+    function UpdateCarousel1() {
+        const totalSlides = type.length;
+        wrapper.innerHTML = '';
+        
+        // Add 3 slides
+        for (let i = 0; i < 3; i++) {
+            const slideIndex = (counter + i) % totalSlides;
+            const clone = type[slideIndex].cloneNode(true);
+            wrapper.appendChild(clone);
+        }
+
+        wrapper.style.transform = 'translateX(0)';
+
+        captions.forEach(c => c.classList.remove("active"));
+        if (captions[counter]) captions[counter].classList.add("active");
+    }
+
+    // Function for Section6 - 1 slide visible
+    function UpdateCarousel() {
         type.forEach(s => s.classList.remove("active"));
         captions.forEach(c => c.classList.remove("active"));
 
@@ -49,20 +54,25 @@ document.querySelectorAll(".carousel-all").forEach(parent => {
     }
 
     function Run() {
-        if (isGroup) {
-            Update();
+        if (isSection10) {
+            UpdateCarousel2();
+        } else if (isSection7) {
+            UpdateCarousel1();
         } else {
-            Change();
+            UpdateCarousel();
         }
     }
 
+    // Initialize
     Run();
 
+    // Auto-play
     setInterval(() => {
         counter = (counter + 1) % type.length;
         Run();
     }, 5000);
 
+    // Button clicks
     captions.forEach((cap, i) => {
         cap.onclick = () => {
             counter = i;
