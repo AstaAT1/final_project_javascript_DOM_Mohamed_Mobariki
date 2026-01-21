@@ -6,6 +6,39 @@ document.querySelectorAll(".carousel-all").forEach(parent => {
     const isSection7 = parent.querySelector(".memorys") !== null;
     const isSection10 = parent.querySelector(".gallery") !== null;
     let counter = 0;
+    const menuLinks = document.querySelectorAll('.choix a');
+const menuSections = document.querySelectorAll('.p2-s5');
+
+// Initially show only Starters
+menuSections.forEach((section, index) => {
+    if (index === 0) {
+        section.classList.add('active-menu');
+        section.classList.remove('bo');
+    }
+});
+
+// Add click events to menu links
+menuLinks.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        menuLinks.forEach(l => l.classList.remove('active-link'));
+        
+        // Add active class to clicked link
+        link.classList.add('active-link');
+        
+        // Hide all menu sections
+        menuSections.forEach(section => {
+            section.classList.add('bo');
+            section.classList.remove('active-menu');
+        });
+        
+        // Show corresponding menu section
+        menuSections[index].classList.remove('bo');
+        menuSections[index].classList.add('active-menu');
+    });
+});
 
     // Function for Section10 - 5 slides visible
     function UpdateCarousel2() {
@@ -80,3 +113,27 @@ document.querySelectorAll(".carousel-all").forEach(parent => {
         };
     });
 });
+let modal1 = document.querySelector(".modal1")
+document.querySelectorAll(".modal-all").forEach(btn => {
+    btn.addEventListener("click" , () => {
+        let modal = document.createElement("div")
+        modal.classList.add("modal")
+           if(btn === modal1) {
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h2>Modal 1</h2>
+                    
+                    <p>Ana Modal 1</p>
+                    <button class="closeBtn"><i class="fa-solid fa-x"></i></button>
+                </div>
+            `
+        }
+        document.body.append(modal)
+        modal.querySelector(".closeBtn").onclick = () => modal.remove()
+        modal.onclick = (e) => {
+            if(e.target === modal){
+                modal.remove()
+            }
+        }
+    })
+})
